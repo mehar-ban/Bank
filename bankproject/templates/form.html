@@ -1,0 +1,304 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>form</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<form method="post" action="/">-->
+<!--   {% csrf_token %}-->
+<!--  <input type="text" name="username" placeholder="Enter your name"><br>-->
+<!--  <input type="date" name="dob" placeholder="Enter your Date of Birth"><br>-->
+<!--  <input type="number" name="age" placeholder="Enter your Age"><br>-->
+<!--  <label>Male</label> <input type="radio" name="gender" id="male" value="male"><br>-->
+<!--  <label>Female</label><input type="radio" name="gender" id="female" value="female"><br>-->
+<!--  <input type="text" name="phone" placeholder="Enter your phone number"><br>-->
+<!--  <input type="email" name="email" placeholder="Enter your mail"><br>-->
+<!--  <input type="text" name="address" placeholder="Enter your Address"><br>-->
+
+<!--    <label for="dist">District</label>-->
+<!--            <select id="dist">-->
+
+<!--                <option value="Ernakulam">Ernakulam</option>-->
+<!--                <option value="Kozhikode">Kozhikode</option>-->
+<!--                <option value="Malappuram">Malappuram</option>-->
+<!--                <option value="Palakkad">Palakkad</option>-->
+<!--                <option value="Thiruvananthapuram">Thiruvananthapuram</option>-->
+
+<!--            </select>-->
+<!--   <br>-->
+<!--  <input type="text" name="branch" placeholder="Enter the Branch">-->
+
+    <!--    <li class="has-children">Branches</li>-->
+<!--                      <ul class="dropdown">-->
+<!--     <li>Kochi</li>-->
+<!--     <li>Ramanattukara</li>-->
+<!--     <li>Perinthalmanna</li>-->
+<!--      <li>Malampuzha</li>-->
+<!--      <li>gthu</li>-->
+<!--                      </ul>-->
+
+
+<!--<br>-->
+                               <!-- <input type="checkbox">  -->
+
+<!--           <label for="type">Account Type</label>-->
+<!--            <select id="type">-->
+<!--                <option value="current">Current Accounts </option>-->
+<!--                <option value="saving">Savings Accounts</option>-->
+<!--                <option value="fixed">Fixed deposit account</option>-->
+<!--            </select>-->
+<!-- <br>-->
+<!-- <br>-->
+<!--  <label>Debit Card</label><input type="checkbox" name="debitcard" id="debitcard" value="debitcard"><br>-->
+<!--  <label>Credit Card</label><input type="checkbox" name="creditcard" id="creditcard" value="creditcard"><br>-->
+<!--  <label>Cheque Book</label><input type="checkbox" name="chequebook" id="chequebook" value="chequebook">-->
+
+<!--    <br>-->
+<!--    <br>-->
+
+<!--  <input type="submit">-->
+<!--    <a class="btn btn-warning" href="logout/">Logout</a>-->
+<!--</form>-->
+<!--</body>-->
+<!--</html>-->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+body{
+  background: #1abc9c;
+  overflow: hidden;
+}
+::selection{
+  background: rgba(26,188,156,0.3);
+}
+
+<!--for top margin-->
+.container{
+  max-width: 360px;
+  padding: 5 20px;
+  margin: 120px auto;
+}
+.wrapper{
+  width: fit-content ;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px 1px rgba(0,0,0,0.1);
+
+}
+.wrapper .title{
+  height: auto;
+  background: #16a085;
+  border-radius: 2px 5px 0 0;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper form{
+  padding: 30px 25px 25px 25px;
+}
+.wrapper form .row{
+  height: auto;
+  margin-bottom: 15px;
+  position: relative;
+}
+.wrapper form .row input{
+  height: auto;
+  width: auto;
+  outline: none;
+  padding-left: 60px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+form .row input:focus{
+  border-color: #16a085;
+  box-shadow: inset 0px 0px 2px 2px rgba(26,188,156,0.25);
+}
+form .row input::placeholder{
+  color: #999;
+}
+
+
+.wrapper form .row i{
+  position: absolute;
+  width: 47px;
+  height: 100%;
+  color: #fff;
+  font-size: 18px;
+  background: #16a085;
+  border: 1px solid #16a085;
+  border-radius: 5px 0 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper form .pass{
+  margin: -8px 0 20px 0;
+}
+.wrapper form .pass a{
+  color: #16a085;
+  font-size: 17px;
+  text-decoration: none;
+}
+.wrapper form .pass a:hover{
+  text-decoration: underline;
+}
+
+.wrapper form .button input{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  padding-left: 0px;
+  background: #16a085;
+  border: 1px solid #16a085;
+  cursor: pointer;
+}
+form .button input:hover{
+  background: #12876f;
+}
+.wrapper form .signup-link{
+  text-align: center;
+  margin-top: 18px;
+  font-size: 17px;
+}
+.wrapper form .signup-link a{
+  color: #16a085;
+  text-decoration: none;
+}
+form .signup-link a:hover{
+  text-decoration: underline;
+}
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Login Form | CodingLab</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+
+  </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="title"><span>Form</span></div>
+        <form  action="newpage/" method="post">
+          {% csrf_token %}
+          <div class="row">
+            <i class="fas fa-user"></i>
+            <input type="text" name="username" placeholder="Enter Username"  required>
+          </div>
+          <div class="row">
+            <i class="fas fa-user"></i>
+<!--            <input type="password" placeholder="Password" name="password" required>-->
+                <input type="date" name="dob" placeholder="Enter your Date of Birth" required>
+          </div>
+          <div class="row">
+            <i class="fas fa-user"></i>
+            <input type="number" name="age" placeholder="Enter your Age" required>
+          </div>
+<!--            <div class="row">-->
+<!--            <i class="fas fa-user"></i>-->
+             <label>Male</label> <input type="radio" name="gender" id="male" value="male">
+             <label>Female</label><input type="radio" name="gender" id="female" value="female">
+<!--          </div>-->
+<!--            <div class="row">-->
+<!--            <i class="fas fa-user"></i>-->
+<!--            <input type="text" name="phone" placeholder="Enter your phone number" required>-->
+<!--          </div>-->
+            <div class="row">
+            <i class="fas fa-user"></i>
+            <input type="email" name="email" placeholder="Enter your mail id" required>
+          </div>
+            <div class="row">
+            <i class="fas fa-user"></i>
+            <input type="text" name="address" placeholder="Enter your address" required>
+          </div>
+
+            <div class="row">
+            <i class="fas fa-user"></i>
+            <input type="text" name="phone" placeholder="Enter your phone number" required>
+          </div>
+
+
+             <div>
+                 <label for="dist">District</label>
+                 <select id="dist">
+                <option value="Kasaragod">Kasaragod</option>
+                <option value="Kannur">Kannur</option>
+                <option value="Wayanad">Wayanad</option>
+                <option value="Kozhikode">Kozhikode</option>
+                <option value="Malappuram">Malappuram</option>
+                <option value="Palakkad">Palakkad</option>
+                <option value="Thrissur">Thrissur</option>
+                <option value="Ernakulam">Ernakulam</option>
+                <option value="Idukki">Idukki</option>
+                <option value="Kottayam">Kottayam</option>
+                <option value="Pathanamthitta">Pathanamthitta</option>
+                <option value="Alappuzha">Alappuzha</option>
+                <option value="Kollam">Kollam</option>
+                <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+                </select>
+             </div>
+
+
+            <div class="row">
+            <i class="fas fa-user"></i>
+            <input type="text" name="branch" placeholder="Branch" required>
+            </div>
+
+
+<!--          <div class="row">-->
+<!--           <i class="fas fa-user"></i>-->
+<!--           <input type="checkbox">-->
+           <div>
+           <label for="type">Account Type</label>
+            <select id="type">
+                <option value="current">Current Accounts </option>
+                <option value="saving">Savings Accounts</option>
+                <option value="fixed">Fixed deposit account</option>
+            </select>
+            </div>
+            <div>
+
+           <label>Debit Card</label><input type="checkbox" name="debitcard" id="debitcard" value="debitcard">
+           <label>Credit Card</label><input type="checkbox" name="creditcard" id="creditcard" value="creditcard">
+           <label>Cheque Book</label><input type="checkbox" name="chequebook" id="chequebook" value="chequebook">
+
+           </div>
+
+        <div class="row button">
+            <input type="submit" value="Submit">
+
+
+          </div>
+<!--          <div class="signup-link">Not a member? <a href="register">Signup now</a></div>-->
+
+            <div class="row button">
+               <a class="btn btn-warning" href="logout/">Logout</a>
+
+            </div>
+        </form>
+      </div>
+    </div>
+
+<!--  {% for msg in messages %}-->
+<!--  <h2>{{msg}}</h2>-->
+<!--  {% endfor %}-->
+
+  </body>
+</html>

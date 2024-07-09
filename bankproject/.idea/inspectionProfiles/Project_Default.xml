@@ -1,0 +1,19 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="travelproject.urls.django" />
+          <option value="travelproject.urls.*" />
+          <option value="travelapp.urls.django" />
+          <option value="credentials.settings" />
+          <option value="credentials.views.messages" />
+          <option value="credentials.views.user" />
+          <option value="demoapp.urls.django" />
+          <option value="admin" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
